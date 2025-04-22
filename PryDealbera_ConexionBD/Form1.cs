@@ -51,7 +51,7 @@ namespace PryDealbera_ConexionBD
             cmbCategorias.SelectedIndex = 0;
 
             btnModificar.Enabled = true;
-            btnEliminar.Enabled = true;
+            btnEliminarCod.Enabled = true;
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
@@ -66,6 +66,31 @@ namespace PryDealbera_ConexionBD
 
             conexion.Modificar(modificado);
             conexion.ListarBD(dgvGrilla);
+        }
+
+        private void btnEliminarCod_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtEliminarCod.Text))
+            {
+                MessageBox.Show("Por favor ingrese el código del producto a eliminar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            int codigo;
+            if (!int.TryParse(txtEliminarCod.Text, out codigo))
+            {
+                MessageBox.Show("Ingrese un código válido (número entero).", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            DialogResult confirmacion = MessageBox.Show("¿Está seguro de que desea eliminar este producto?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (confirmacion == DialogResult.Yes)
+            {
+                conexion.EliminarPorCodigo(codigo);
+                conexion.ListarBD(dgvGrilla);
+                txtEliminarCod.Clear();
+            }
+
         }
     }
 }
