@@ -43,6 +43,8 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.txtEliminar = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cmbCategorias = new System.Windows.Forms.ComboBox();
+            this.btnModificar = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -50,7 +52,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.numPrecio = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
-            this.numIdCategoria = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -59,13 +60,11 @@
             this.btnAgregar = new System.Windows.Forms.Button();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.dgvGrilla = new System.Windows.Forms.DataGridView();
-            this.btnMostrarDatos = new System.Windows.Forms.Button();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numStock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPrecio)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numIdCategoria)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).BeginInit();
             this.SuspendLayout();
             // 
@@ -201,6 +200,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cmbCategorias);
+            this.groupBox1.Controls.Add(this.btnModificar);
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label8);
@@ -208,7 +209,6 @@
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.numPrecio);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.numIdCategoria);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.txtDescripcion);
             this.groupBox1.Controls.Add(this.label4);
@@ -216,12 +216,30 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.btnAgregar);
             this.groupBox1.Controls.Add(this.txtCodigo);
-            this.groupBox1.Location = new System.Drawing.Point(7, 37);
+            this.groupBox1.Location = new System.Drawing.Point(7, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(167, 357);
+            this.groupBox1.Size = new System.Drawing.Size(167, 382);
             this.groupBox1.TabIndex = 24;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Agregar Producto";
+            // 
+            // cmbCategorias
+            // 
+            this.cmbCategorias.FormattingEnabled = true;
+            this.cmbCategorias.Location = new System.Drawing.Point(8, 187);
+            this.cmbCategorias.Name = "cmbCategorias";
+            this.cmbCategorias.Size = new System.Drawing.Size(121, 21);
+            this.cmbCategorias.TabIndex = 18;
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.Location = new System.Drawing.Point(45, 350);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(75, 22);
+            this.btnModificar.TabIndex = 17;
+            this.btnModificar.Text = "Modificar";
+            this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // groupBox2
             // 
@@ -282,13 +300,6 @@
             this.label6.TabIndex = 9;
             this.label6.Text = "ID Categoria:";
             // 
-            // numIdCategoria
-            // 
-            this.numIdCategoria.Location = new System.Drawing.Point(9, 187);
-            this.numIdCategoria.Name = "numIdCategoria";
-            this.numIdCategoria.Size = new System.Drawing.Size(120, 20);
-            this.numIdCategoria.TabIndex = 8;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -337,6 +348,7 @@
             this.btnAgregar.TabIndex = 0;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // txtCodigo
             // 
@@ -353,22 +365,11 @@
             this.dgvGrilla.Size = new System.Drawing.Size(643, 224);
             this.dgvGrilla.TabIndex = 23;
             // 
-            // btnMostrarDatos
-            // 
-            this.btnMostrarDatos.Location = new System.Drawing.Point(679, 243);
-            this.btnMostrarDatos.Name = "btnMostrarDatos";
-            this.btnMostrarDatos.Size = new System.Drawing.Size(144, 41);
-            this.btnMostrarDatos.TabIndex = 17;
-            this.btnMostrarDatos.Text = "Mostrar Datos";
-            this.btnMostrarDatos.UseVisualStyleBackColor = true;
-            this.btnMostrarDatos.Click += new System.EventHandler(this.button1_Click);
-            // 
             // frmInicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(835, 406);
-            this.Controls.Add(this.btnMostrarDatos);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
@@ -384,7 +385,6 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numStock)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPrecio)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numIdCategoria)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).EndInit();
             this.ResumeLayout(false);
 
@@ -414,7 +414,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.NumericUpDown numPrecio;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.NumericUpDown numIdCategoria;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.Label label4;
@@ -423,7 +422,8 @@
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.DataGridView dgvGrilla;
-        private System.Windows.Forms.Button btnMostrarDatos;
+        private System.Windows.Forms.Button btnModificar;
+        private System.Windows.Forms.ComboBox cmbCategorias;
     }
 }
 
