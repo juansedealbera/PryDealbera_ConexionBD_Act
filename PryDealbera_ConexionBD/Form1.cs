@@ -70,39 +70,25 @@ namespace PryDealbera_ConexionBD
 
         private void btnEliminarCod_Click(object sender, EventArgs e)
         {
-            // Verificar si se ha seleccionado un producto en la grilla
-            if (codSel == 0) // Si no se ha seleccionado ningún producto
-            {
-                MessageBox.Show("Por favor, seleccione un producto para eliminar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+            DialogResult res = MessageBox.Show("¿Estás seguro de que deseas eliminar este producto?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-            // Confirmación antes de eliminar
-            DialogResult confirmacion = MessageBox.Show("¿Está seguro de que desea eliminar este producto?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (confirmacion == DialogResult.Yes)
+            if (res == DialogResult.Yes)
             {
-                // Llamar al método EliminarPorCodigo para eliminar el producto de la base de datos
                 conexion.Eliminar(codSel);
-
-                // Actualizar la grilla para reflejar los cambios
                 conexion.ListarBD(dgvGrilla);
 
-                // Limpiar la selección
                 codSel = 0;
             }
         }
 
         private void numPrecio_ValueChanged(object sender, EventArgs e)
         {
-            numPrecio.Maximum = 5000000;
-            numPrecio.Minimum = 1;
+            
         }
 
         private void numStock_ValueChanged(object sender, EventArgs e)
         {
-            numStock.Minimum = 1;
-            numStock.Maximum = 1500;
+            
         }
 
         private void cmbCategorias_SelectedIndexChanged(object sender, EventArgs e)
@@ -151,12 +137,15 @@ namespace PryDealbera_ConexionBD
 
         private void dgvGrilla_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            // Verificamos que se haya hecho clic en una fila válida
             if (e.RowIndex >= 0)
             {
-                // Obtener el código del producto seleccionado (supone que la primera columna tiene el código)
-                DataGridViewRow filaSeleccionada = dgvGrilla.Rows[e.RowIndex];
-                codSel = Convert.ToInt32(filaSeleccionada.Cells["Codigo"].Value); // Asumimos que "Codigo" es el nombre de la columna de código
+                DataGridViewRow fila = dgvGrilla.Rows[e.RowIndex];
+
+                // Asegúrate que la columna se llama "Codigo" y tiene el valor correcto
+                codSel = Convert.ToInt32(fila.Cells["Codigo"].Value);
+
+                
+                MessageBox.Show("Código seleccionado: " + codSel);
             }
         }
     }
