@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.btnVerCategorias = new System.Windows.Forms.Button();
             this.btnVerTodos = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.btnBuscarNombre = new System.Windows.Forms.Button();
@@ -42,7 +43,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cmbCategorias = new System.Windows.Forms.ComboBox();
             this.btnModificar = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.numStock = new System.Windows.Forms.NumericUpDown();
             this.label7 = new System.Windows.Forms.Label();
@@ -54,9 +54,7 @@
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnAgregar = new System.Windows.Forms.Button();
-            this.txtCodigo = new System.Windows.Forms.TextBox();
             this.dgvGrilla = new System.Windows.Forms.DataGridView();
-            this.btnVerCategorias = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnAgregarCat = new System.Windows.Forms.Button();
@@ -85,6 +83,15 @@
             this.groupBox4.TabIndex = 26;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Filtro de Búsqueda";
+            // 
+            // btnVerCategorias
+            // 
+            this.btnVerCategorias.Location = new System.Drawing.Point(6, 59);
+            this.btnVerCategorias.Name = "btnVerCategorias";
+            this.btnVerCategorias.Size = new System.Drawing.Size(106, 26);
+            this.btnVerCategorias.TabIndex = 17;
+            this.btnVerCategorias.Text = "Buscar Categoría";
+            this.btnVerCategorias.UseVisualStyleBackColor = true;
             // 
             // btnVerTodos
             // 
@@ -178,7 +185,6 @@
             // 
             this.groupBox1.Controls.Add(this.cmbCategorias);
             this.groupBox1.Controls.Add(this.btnModificar);
-            this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.numStock);
             this.groupBox1.Controls.Add(this.label7);
@@ -190,10 +196,9 @@
             this.groupBox1.Controls.Add(this.txtNombre);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.btnAgregar);
-            this.groupBox1.Controls.Add(this.txtCodigo);
             this.groupBox1.Location = new System.Drawing.Point(7, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(167, 382);
+            this.groupBox1.Size = new System.Drawing.Size(167, 358);
             this.groupBox1.TabIndex = 24;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Agregar Producto";
@@ -201,14 +206,14 @@
             // cmbCategorias
             // 
             this.cmbCategorias.FormattingEnabled = true;
-            this.cmbCategorias.Location = new System.Drawing.Point(8, 187);
+            this.cmbCategorias.Location = new System.Drawing.Point(8, 156);
             this.cmbCategorias.Name = "cmbCategorias";
             this.cmbCategorias.Size = new System.Drawing.Size(121, 21);
             this.cmbCategorias.TabIndex = 18;
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(45, 350);
+            this.btnModificar.Location = new System.Drawing.Point(45, 319);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(75, 22);
             this.btnModificar.TabIndex = 17;
@@ -216,19 +221,10 @@
             this.btnModificar.UseVisualStyleBackColor = true;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(12, 23);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(43, 13);
-            this.label9.TabIndex = 14;
-            this.label9.Text = "Codigo:";
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(6, 275);
+            this.label8.Location = new System.Drawing.Point(6, 244);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(35, 13);
             this.label8.TabIndex = 13;
@@ -236,15 +232,16 @@
             // 
             // numStock
             // 
-            this.numStock.Location = new System.Drawing.Point(9, 291);
+            this.numStock.Location = new System.Drawing.Point(9, 260);
             this.numStock.Name = "numStock";
             this.numStock.Size = new System.Drawing.Size(120, 20);
             this.numStock.TabIndex = 12;
+            this.numStock.ValueChanged += new System.EventHandler(this.numStock_ValueChanged);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 225);
+            this.label7.Location = new System.Drawing.Point(6, 194);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(40, 13);
             this.label7.TabIndex = 11;
@@ -252,15 +249,16 @@
             // 
             // numPrecio
             // 
-            this.numPrecio.Location = new System.Drawing.Point(9, 243);
+            this.numPrecio.Location = new System.Drawing.Point(9, 212);
             this.numPrecio.Name = "numPrecio";
             this.numPrecio.Size = new System.Drawing.Size(120, 20);
             this.numPrecio.TabIndex = 10;
+            this.numPrecio.ValueChanged += new System.EventHandler(this.numPrecio_ValueChanged);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 171);
+            this.label6.Location = new System.Drawing.Point(6, 140);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(69, 13);
             this.label6.TabIndex = 9;
@@ -269,7 +267,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 118);
+            this.label5.Location = new System.Drawing.Point(6, 87);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(66, 13);
             this.label5.TabIndex = 7;
@@ -277,7 +275,7 @@
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(9, 134);
+            this.txtDescripcion.Location = new System.Drawing.Point(9, 103);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(138, 20);
             this.txtDescripcion.TabIndex = 6;
@@ -285,7 +283,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 68);
+            this.label4.Location = new System.Drawing.Point(6, 37);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(47, 13);
             this.label4.TabIndex = 5;
@@ -293,7 +291,7 @@
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(9, 84);
+            this.txtNombre.Location = new System.Drawing.Point(9, 53);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(100, 20);
             this.txtNombre.TabIndex = 4;
@@ -308,20 +306,13 @@
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(45, 322);
+            this.btnAgregar.Location = new System.Drawing.Point(45, 291);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(75, 23);
             this.btnAgregar.TabIndex = 0;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
-            // 
-            // txtCodigo
-            // 
-            this.txtCodigo.Location = new System.Drawing.Point(8, 39);
-            this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Size = new System.Drawing.Size(100, 20);
-            this.txtCodigo.TabIndex = 2;
             // 
             // dgvGrilla
             // 
@@ -330,15 +321,6 @@
             this.dgvGrilla.Name = "dgvGrilla";
             this.dgvGrilla.Size = new System.Drawing.Size(643, 224);
             this.dgvGrilla.TabIndex = 23;
-            // 
-            // btnVerCategorias
-            // 
-            this.btnVerCategorias.Location = new System.Drawing.Point(6, 59);
-            this.btnVerCategorias.Name = "btnVerCategorias";
-            this.btnVerCategorias.Size = new System.Drawing.Size(106, 26);
-            this.btnVerCategorias.TabIndex = 17;
-            this.btnVerCategorias.Text = "Buscar Categoría";
-            this.btnVerCategorias.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
@@ -418,7 +400,6 @@
         private System.Windows.Forms.Button btnEliminarCod;
         private System.Windows.Forms.TextBox txtEliminarCod;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.NumericUpDown numStock;
         private System.Windows.Forms.Label label7;
@@ -430,7 +411,6 @@
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnAgregar;
-        private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.DataGridView dgvGrilla;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.ComboBox cmbCategorias;

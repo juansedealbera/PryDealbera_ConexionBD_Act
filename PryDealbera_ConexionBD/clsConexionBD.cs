@@ -14,7 +14,8 @@ namespace PryDealbera_ConexionBD
     internal class clsConexionBD
     {
         //cadena de conexion
-        string cadenaConexion = "Server=localhost\\SQLEXPRESS;Database=Comercio;Trusted_Connection=True;";
+        string cadenaConexion = "Server=PC26;Database=Comercio;Trusted_Connection=True;";
+        //"Server=localhost\\SQLEXPRESS;Database=Comercio;Trusted_Connection=True;"
 
         //conector
         SqlConnection coneccionBaseDatos;

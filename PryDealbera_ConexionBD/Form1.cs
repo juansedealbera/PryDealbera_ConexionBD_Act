@@ -92,5 +92,17 @@ namespace PryDealbera_ConexionBD
             }
 
         }
+
+        private void numPrecio_ValueChanged(object sender, EventArgs e)
+        {
+            numPrecio.Maximum = 5000000;
+            numPrecio.Minimum = 1;
+        }
+
+        private void numStock_ValueChanged(object sender, EventArgs e)
+        {
+            numStock.Minimum = 1;
+            numStock.Maximum = 1500;
+        }
     }
 }
