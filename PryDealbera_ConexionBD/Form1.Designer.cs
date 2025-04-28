@@ -34,12 +34,9 @@
             this.label11 = new System.Windows.Forms.Label();
             this.btnBuscarNombre = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtBuscarNombre = new System.Windows.Forms.TextBox();
             this.cmbVerCategorias = new System.Windows.Forms.ComboBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.btnEliminarCod = new System.Windows.Forms.Button();
-            this.txtEliminarCod = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cmbCategorias = new System.Windows.Forms.ComboBox();
             this.btnModificar = new System.Windows.Forms.Button();
@@ -60,7 +57,6 @@
             this.btnAgregarCat = new System.Windows.Forms.Button();
             this.txtAgregarCat = new System.Windows.Forms.TextBox();
             this.groupBox4.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numStock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPrecio)).BeginInit();
@@ -75,11 +71,11 @@
             this.groupBox4.Controls.Add(this.label11);
             this.groupBox4.Controls.Add(this.btnBuscarNombre);
             this.groupBox4.Controls.Add(this.label10);
-            this.groupBox4.Controls.Add(this.textBox2);
+            this.groupBox4.Controls.Add(this.txtBuscarNombre);
             this.groupBox4.Controls.Add(this.cmbVerCategorias);
             this.groupBox4.Location = new System.Drawing.Point(343, 255);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(312, 129);
+            this.groupBox4.Size = new System.Drawing.Size(397, 115);
             this.groupBox4.TabIndex = 26;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Filtro de Búsqueda";
@@ -95,17 +91,18 @@
             // 
             // btnVerTodos
             // 
-            this.btnVerTodos.Location = new System.Drawing.Point(117, 90);
+            this.btnVerTodos.Location = new System.Drawing.Point(303, 44);
             this.btnVerTodos.Name = "btnVerTodos";
             this.btnVerTodos.Size = new System.Drawing.Size(75, 25);
             this.btnVerTodos.TabIndex = 16;
             this.btnVerTodos.Text = "Ver Todos";
             this.btnVerTodos.UseVisualStyleBackColor = true;
+            this.btnVerTodos.Click += new System.EventHandler(this.btnVerTodos_Click);
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(202, 16);
+            this.label11.Location = new System.Drawing.Point(159, 16);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(99, 13);
             this.label11.TabIndex = 15;
@@ -113,12 +110,13 @@
             // 
             // btnBuscarNombre
             // 
-            this.btnBuscarNombre.Location = new System.Drawing.Point(205, 59);
+            this.btnBuscarNombre.Location = new System.Drawing.Point(162, 59);
             this.btnBuscarNombre.Name = "btnBuscarNombre";
-            this.btnBuscarNombre.Size = new System.Drawing.Size(75, 26);
+            this.btnBuscarNombre.Size = new System.Drawing.Size(96, 26);
             this.btnBuscarNombre.TabIndex = 14;
-            this.btnBuscarNombre.Text = "Buscar ID";
+            this.btnBuscarNombre.Text = "Buscar Nombre";
             this.btnBuscarNombre.UseVisualStyleBackColor = true;
+            this.btnBuscarNombre.Click += new System.EventHandler(this.btnBuscarNombre_Click);
             // 
             // label10
             // 
@@ -129,12 +127,12 @@
             this.label10.TabIndex = 13;
             this.label10.Text = "Ver Por Categoria";
             // 
-            // textBox2
+            // txtBuscarNombre
             // 
-            this.textBox2.Location = new System.Drawing.Point(179, 33);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(122, 20);
-            this.textBox2.TabIndex = 13;
+            this.txtBuscarNombre.Location = new System.Drawing.Point(147, 33);
+            this.txtBuscarNombre.Name = "txtBuscarNombre";
+            this.txtBuscarNombre.Size = new System.Drawing.Size(122, 20);
+            this.txtBuscarNombre.TabIndex = 13;
             // 
             // cmbVerCategorias
             // 
@@ -144,29 +142,9 @@
             this.cmbVerCategorias.Size = new System.Drawing.Size(121, 21);
             this.cmbVerCategorias.TabIndex = 13;
             // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.label3);
-            this.groupBox3.Controls.Add(this.btnEliminarCod);
-            this.groupBox3.Controls.Add(this.txtEliminarCod);
-            this.groupBox3.Location = new System.Drawing.Point(661, 255);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(162, 115);
-            this.groupBox3.TabIndex = 25;
-            this.groupBox3.TabStop = false;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(15, 33);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(130, 13);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "Eliminar Producto Por Cod";
-            // 
             // btnEliminarCod
             // 
-            this.btnEliminarCod.Location = new System.Drawing.Point(18, 75);
+            this.btnEliminarCod.Location = new System.Drawing.Point(45, 343);
             this.btnEliminarCod.Name = "btnEliminarCod";
             this.btnEliminarCod.Size = new System.Drawing.Size(75, 23);
             this.btnEliminarCod.TabIndex = 6;
@@ -174,16 +152,10 @@
             this.btnEliminarCod.UseVisualStyleBackColor = true;
             this.btnEliminarCod.Click += new System.EventHandler(this.btnEliminarCod_Click);
             // 
-            // txtEliminarCod
-            // 
-            this.txtEliminarCod.Location = new System.Drawing.Point(18, 49);
-            this.txtEliminarCod.Name = "txtEliminarCod";
-            this.txtEliminarCod.Size = new System.Drawing.Size(122, 20);
-            this.txtEliminarCod.TabIndex = 3;
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.cmbCategorias);
+            this.groupBox1.Controls.Add(this.btnEliminarCod);
             this.groupBox1.Controls.Add(this.btnModificar);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.numStock);
@@ -198,7 +170,7 @@
             this.groupBox1.Controls.Add(this.btnAgregar);
             this.groupBox1.Location = new System.Drawing.Point(7, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(167, 358);
+            this.groupBox1.Size = new System.Drawing.Size(167, 372);
             this.groupBox1.TabIndex = 24;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Agregar Producto";
@@ -210,6 +182,7 @@
             this.cmbCategorias.Name = "cmbCategorias";
             this.cmbCategorias.Size = new System.Drawing.Size(121, 21);
             this.cmbCategorias.TabIndex = 18;
+            this.cmbCategorias.SelectedIndexChanged += new System.EventHandler(this.cmbCategorias_SelectedIndexChanged);
             // 
             // btnModificar
             // 
@@ -321,6 +294,7 @@
             this.dgvGrilla.Name = "dgvGrilla";
             this.dgvGrilla.Size = new System.Drawing.Size(643, 224);
             this.dgvGrilla.TabIndex = 23;
+            this.dgvGrilla.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGrilla_CellContentClick);
             // 
             // groupBox2
             // 
@@ -350,6 +324,7 @@
             this.btnAgregarCat.TabIndex = 6;
             this.btnAgregarCat.Text = "Agregar";
             this.btnAgregarCat.UseVisualStyleBackColor = true;
+            this.btnAgregarCat.Click += new System.EventHandler(this.btnAgregarCat_Click);
             // 
             // txtAgregarCat
             // 
@@ -365,7 +340,6 @@
             this.ClientSize = new System.Drawing.Size(835, 501);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox4);
-            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgvGrilla);
             this.Name = "frmInicio";
@@ -373,8 +347,6 @@
             this.Load += new System.EventHandler(this.frmInicio_Load);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numStock)).EndInit();
@@ -393,12 +365,9 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button btnBuscarNombre;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtBuscarNombre;
         private System.Windows.Forms.ComboBox cmbVerCategorias;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnEliminarCod;
-        private System.Windows.Forms.TextBox txtEliminarCod;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.NumericUpDown numStock;

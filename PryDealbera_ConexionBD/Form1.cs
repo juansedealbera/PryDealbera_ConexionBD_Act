@@ -70,27 +70,27 @@ namespace PryDealbera_ConexionBD
 
         private void btnEliminarCod_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtEliminarCod.Text))
+            // Verificar si se ha seleccionado un producto en la grilla
+            if (codSel == 0) // Si no se ha seleccionado ningún producto
             {
-                MessageBox.Show("Por favor ingrese el código del producto a eliminar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Por favor, seleccione un producto para eliminar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            int codigo;
-            if (!int.TryParse(txtEliminarCod.Text, out codigo))
-            {
-                MessageBox.Show("Ingrese un código válido (número entero).", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
+            // Confirmación antes de eliminar
             DialogResult confirmacion = MessageBox.Show("¿Está seguro de que desea eliminar este producto?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
             if (confirmacion == DialogResult.Yes)
             {
-                conexion.EliminarPorCodigo(codigo);
-                conexion.ListarBD(dgvGrilla);
-                txtEliminarCod.Clear();
-            }
+                // Llamar al método EliminarPorCodigo para eliminar el producto de la base de datos
+                conexion.Eliminar(codSel);
 
+                // Actualizar la grilla para reflejar los cambios
+                conexion.ListarBD(dgvGrilla);
+
+                // Limpiar la selección
+                codSel = 0;
+            }
         }
 
         private void numPrecio_ValueChanged(object sender, EventArgs e)
@@ -103,6 +103,61 @@ namespace PryDealbera_ConexionBD
         {
             numStock.Minimum = 1;
             numStock.Maximum = 1500;
+        }
+
+        private void cmbCategorias_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAgregarCat_Click(object sender, EventArgs e)
+        {
+            string nuevaCategoria = txtAgregarCat.Text.Trim();
+
+            if (string.IsNullOrEmpty(nuevaCategoria))
+            {
+                MessageBox.Show("Por favor ingrese un nombre para la categoría.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Agregar la nueva categoría a la base de datos
+            conexion.AgregarCategoria(nuevaCategoria);
+
+            // Limpiar el TextBox
+            txtAgregarCat.Clear();
+
+            // Recargar las categorías en el ComboBox
+            conexion.categorias(cmbCategorias);
+        }
+
+        private void btnBuscarNombre_Click(object sender, EventArgs e)
+        {
+            string nombreBuscado = txtBuscarNombre.Text.Trim();
+
+            if (string.IsNullOrEmpty(nombreBuscado))
+            {
+                MessageBox.Show("Por favor ingrese un nombre para realizar la búsqueda.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Llamar al método de búsqueda en la base de datos.
+            conexion.BuscarPorNombre(nombreBuscado, dgvGrilla);
+        }
+
+        private void btnVerTodos_Click(object sender, EventArgs e)
+        {
+            conexion.ListarBD(dgvGrilla);
+        }
+
+        private void dgvGrilla_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Verificamos que se haya hecho clic en una fila válida
+            if (e.RowIndex >= 0)
+            {
+                // Obtener el código del producto seleccionado (supone que la primera columna tiene el código)
+                DataGridViewRow filaSeleccionada = dgvGrilla.Rows[e.RowIndex];
+                codSel = Convert.ToInt32(filaSeleccionada.Cells["Codigo"].Value); // Asumimos que "Codigo" es el nombre de la columna de código
+            }
         }
     }
 }
