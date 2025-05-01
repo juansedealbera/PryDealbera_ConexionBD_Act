@@ -70,25 +70,31 @@ namespace PryDealbera_ConexionBD
 
         private void btnEliminarCod_Click(object sender, EventArgs e)
         {
-            DialogResult res = MessageBox.Show("¿Estás seguro de que deseas eliminar este producto?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (res == DialogResult.Yes)
+            // Verifica si hay una fila seleccionada
+            if (dgvGrilla.CurrentRow != null)
             {
-                conexion.Eliminar(codSel);
-                conexion.ListarBD(dgvGrilla);
+                // Obtenemos el valor del código desde la fila seleccionada
+                int codigoSeleccionado = Convert.ToInt32(dgvGrilla.CurrentRow.Cells["Codigo"].Value);
 
-                codSel = 0;
+                // Confirmamos la eliminación
+                DialogResult resultado = MessageBox.Show("¿Estás seguro de que deseas eliminar este producto?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (resultado == DialogResult.Yes)
+                {
+                    // Creamos una instancia de la clase de conexión
+                    clsConexionBD conexion = new clsConexionBD();
+
+                    // Llamamos al método Eliminar
+                    conexion.Eliminar(codigoSeleccionado);
+
+                    // Recargamos la grilla después de eliminar
+                    conexion.ListarBD(dgvGrilla);
+                }
             }
-        }
-
-        private void numPrecio_ValueChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void numStock_ValueChanged(object sender, EventArgs e)
-        {
-            
+            else
+            {
+                MessageBox.Show("Por favor seleccioná una fila para eliminar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void cmbCategorias_SelectedIndexChanged(object sender, EventArgs e)
@@ -118,7 +124,7 @@ namespace PryDealbera_ConexionBD
 
         private void btnBuscarNombre_Click(object sender, EventArgs e)
         {
-            string nombreBuscado = txtBuscarNombre.Text.Trim();
+            string nombreBuscado = txtBuscarProducto.Text.Trim();
 
             if (string.IsNullOrEmpty(nombreBuscado))
             {
@@ -128,6 +134,8 @@ namespace PryDealbera_ConexionBD
 
             // Llamar al método de búsqueda en la base de datos.
             conexion.BuscarPorNombre(nombreBuscado, dgvGrilla);
+
+            txtBuscarProducto.Text = " ";
         }
 
         private void btnVerTodos_Click(object sender, EventArgs e)
@@ -137,7 +145,7 @@ namespace PryDealbera_ConexionBD
 
         private void dgvGrilla_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
+            /*if (e.RowIndex >= 0)
             {
                 DataGridViewRow fila = dgvGrilla.Rows[e.RowIndex];
 
@@ -146,7 +154,17 @@ namespace PryDealbera_ConexionBD
 
                 
                 MessageBox.Show("Código seleccionado: " + codSel);
-            }
+            }*/
+        }
+
+        private void txtBuscarNombre_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnVerCategorias_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
