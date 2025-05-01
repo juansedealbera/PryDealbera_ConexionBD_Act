@@ -28,6 +28,8 @@ namespace PryDealbera_ConexionBD
             conexion.ConectarBD();
             conexion.ListarBD(dgvGrilla);
             conexion.categorias(cmbCategorias);
+            conexion.categorias(cmbVerCategorias);
+
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -143,28 +145,17 @@ namespace PryDealbera_ConexionBD
             conexion.ListarBD(dgvGrilla);
         }
 
-        private void dgvGrilla_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            /*if (e.RowIndex >= 0)
-            {
-                DataGridViewRow fila = dgvGrilla.Rows[e.RowIndex];
-
-                // Asegúrate que la columna se llama "Codigo" y tiene el valor correcto
-                codSel = Convert.ToInt32(fila.Cells["Codigo"].Value);
-
-                
-                MessageBox.Show("Código seleccionado: " + codSel);
-            }*/
-        }
-
-        private void txtBuscarNombre_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnVerCategorias_Click(object sender, EventArgs e)
         {
-
+            if (cmbVerCategorias.SelectedValue != null)
+            {
+                int categoriaId = Convert.ToInt32(cmbVerCategorias.SelectedValue);
+                conexion.BuscarPorCategoria(categoriaId, dgvGrilla);
+            }
+            else
+            {
+                MessageBox.Show("Por favor seleccioná una categoría válida.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }

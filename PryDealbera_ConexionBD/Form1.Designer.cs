@@ -142,7 +142,6 @@
             this.txtBuscarProducto.Name = "txtBuscarProducto";
             this.txtBuscarProducto.Size = new System.Drawing.Size(161, 22);
             this.txtBuscarProducto.TabIndex = 13;
-            this.txtBuscarProducto.TextChanged += new System.EventHandler(this.txtBuscarNombre_TextChanged);
             // 
             // cmbVerCategorias
             // 
@@ -321,7 +320,6 @@
             this.dgvGrilla.RowHeadersWidth = 51;
             this.dgvGrilla.Size = new System.Drawing.Size(857, 316);
             this.dgvGrilla.TabIndex = 23;
-            this.dgvGrilla.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGrilla_CellContentClick);
             // 
             // groupBox2
             // 

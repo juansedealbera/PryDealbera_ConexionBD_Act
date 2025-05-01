@@ -243,6 +243,30 @@ namespace PryDealbera_ConexionBD
                 MessageBox.Show("Error al buscar productos: " + error.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        public void BuscarPorCategoria(int categoriaId, DataGridView grilla)
+        {
+            try
+            {
+                using (SqlConnection conexion = new SqlConnection(cadenaConexion))
+                {
+                    conexion.Open();
+                    string query = "SELECT * FROM Productos WHERE CategoriaId = @categoriaId";
+
+                    SqlCommand comando = new SqlCommand(query, conexion);
+                    comando.Parameters.AddWithValue("@categoriaId", categoriaId);
+
+                    SqlDataAdapter adaptador = new SqlDataAdapter(comando);
+                    DataTable tabla = new DataTable();
+                    adaptador.Fill(tabla);
+
+                    grilla.DataSource = tabla;
+                }
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("Error al buscar por categoría: " + error.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
 
     }
