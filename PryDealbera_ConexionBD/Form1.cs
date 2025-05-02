@@ -36,10 +36,9 @@ namespace PryDealbera_ConexionBD
         {
             string Nombre = txtNombre.Text;
             string Descripcion = txtDescripcion.Text;
-            decimal Precio = Convert.ToDecimal(numPrecio.Text);
+            decimal Precio = numPrecio.Value;
             int Stock = Convert.ToInt32(numStock.Value);
             int CategoriaId = Convert.ToInt32(cmbCategorias.SelectedValue);
-
 
             clsProducto nuevoproducto = new clsProducto(0, Nombre, Descripcion, Precio, Stock, CategoriaId);
 
@@ -62,12 +61,21 @@ namespace PryDealbera_ConexionBD
             codSel,
             txtNombre.Text,
             txtDescripcion.Text,
-            Convert.ToDecimal(numPrecio.Text),
+            numPrecio.Value,
             Convert.ToInt32(numStock.Value),
-            Convert.ToInt32(cmbCategorias.SelectedValue));
+            Convert.ToInt32(cmbCategorias.SelectedValue)
+            );
 
             conexion.Modificar(modificado);
             conexion.ListarBD(dgvGrilla);
+
+            txtNombre.Clear();
+            txtDescripcion.Clear();
+            numPrecio.Value = 0;
+            numStock.Value = 0;
+            cmbCategorias.SelectedIndex = 0;
+
+            codSel = 0;
         }
 
         private void btnEliminarCod_Click(object sender, EventArgs e)
@@ -156,6 +164,21 @@ namespace PryDealbera_ConexionBD
             {
                 MessageBox.Show("Por favor seleccioná una categoría válida.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private void numPrecio_ValueChanged(object sender, EventArgs e)
+        {
+            numPrecio.Maximum = 500000000000;
+        }
+
+        private void numStock_ValueChanged(object sender, EventArgs e)
+        {
+            numStock.Maximum = 500000000000;
+        }
+
+        private void dgvGrilla_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

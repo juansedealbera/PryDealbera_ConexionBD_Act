@@ -74,9 +74,9 @@
             this.groupBox4.Controls.Add(this.txtBuscarProducto);
             this.groupBox4.Controls.Add(this.cmbVerCategorias);
             this.groupBox4.Location = new System.Drawing.Point(476, 343);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox4.Size = new System.Drawing.Size(529, 142);
             this.groupBox4.TabIndex = 26;
             this.groupBox4.TabStop = false;
@@ -85,7 +85,7 @@
             // btnVerCategorias
             // 
             this.btnVerCategorias.Location = new System.Drawing.Point(8, 73);
-            this.btnVerCategorias.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnVerCategorias.Margin = new System.Windows.Forms.Padding(4);
             this.btnVerCategorias.Name = "btnVerCategorias";
             this.btnVerCategorias.Size = new System.Drawing.Size(141, 32);
             this.btnVerCategorias.TabIndex = 17;
@@ -96,7 +96,7 @@
             // btnVerTodos
             // 
             this.btnVerTodos.Location = new System.Drawing.Point(393, 56);
-            this.btnVerTodos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnVerTodos.Margin = new System.Windows.Forms.Padding(4);
             this.btnVerTodos.Name = "btnVerTodos";
             this.btnVerTodos.Size = new System.Drawing.Size(100, 31);
             this.btnVerTodos.TabIndex = 16;
@@ -117,7 +117,7 @@
             // btnBuscarProducto
             // 
             this.btnBuscarProducto.Location = new System.Drawing.Point(216, 73);
-            this.btnBuscarProducto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBuscarProducto.Margin = new System.Windows.Forms.Padding(4);
             this.btnBuscarProducto.Name = "btnBuscarProducto";
             this.btnBuscarProducto.Size = new System.Drawing.Size(128, 32);
             this.btnBuscarProducto.TabIndex = 14;
@@ -138,7 +138,7 @@
             // txtBuscarProducto
             // 
             this.txtBuscarProducto.Location = new System.Drawing.Point(196, 41);
-            this.txtBuscarProducto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtBuscarProducto.Margin = new System.Windows.Forms.Padding(4);
             this.txtBuscarProducto.Name = "txtBuscarProducto";
             this.txtBuscarProducto.Size = new System.Drawing.Size(161, 22);
             this.txtBuscarProducto.TabIndex = 13;
@@ -147,7 +147,7 @@
             // 
             this.cmbVerCategorias.FormattingEnabled = true;
             this.cmbVerCategorias.Location = new System.Drawing.Point(0, 39);
-            this.cmbVerCategorias.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbVerCategorias.Margin = new System.Windows.Forms.Padding(4);
             this.cmbVerCategorias.Name = "cmbVerCategorias";
             this.cmbVerCategorias.Size = new System.Drawing.Size(160, 24);
             this.cmbVerCategorias.TabIndex = 13;
@@ -155,7 +155,7 @@
             // btnEliminarCod
             // 
             this.btnEliminarCod.Location = new System.Drawing.Point(22, 428);
-            this.btnEliminarCod.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEliminarCod.Margin = new System.Windows.Forms.Padding(4);
             this.btnEliminarCod.Name = "btnEliminarCod";
             this.btnEliminarCod.Size = new System.Drawing.Size(160, 28);
             this.btnEliminarCod.TabIndex = 6;
@@ -180,9 +180,9 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.btnAgregar);
             this.groupBox1.Location = new System.Drawing.Point(9, 15);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(223, 470);
             this.groupBox1.TabIndex = 24;
             this.groupBox1.TabStop = false;
@@ -192,7 +192,7 @@
             // 
             this.cmbCategorias.FormattingEnabled = true;
             this.cmbCategorias.Location = new System.Drawing.Point(11, 192);
-            this.cmbCategorias.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbCategorias.Margin = new System.Windows.Forms.Padding(4);
             this.cmbCategorias.Name = "cmbCategorias";
             this.cmbCategorias.Size = new System.Drawing.Size(160, 24);
             this.cmbCategorias.TabIndex = 18;
@@ -201,7 +201,7 @@
             // btnModificar
             // 
             this.btnModificar.Location = new System.Drawing.Point(22, 393);
-            this.btnModificar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnModificar.Margin = new System.Windows.Forms.Padding(4);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(160, 27);
             this.btnModificar.TabIndex = 17;
@@ -222,10 +222,11 @@
             // numStock
             // 
             this.numStock.Location = new System.Drawing.Point(12, 320);
-            this.numStock.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numStock.Margin = new System.Windows.Forms.Padding(4);
             this.numStock.Name = "numStock";
             this.numStock.Size = new System.Drawing.Size(160, 22);
             this.numStock.TabIndex = 12;
+            this.numStock.ValueChanged += new System.EventHandler(this.numStock_ValueChanged);
             // 
             // label7
             // 
@@ -240,10 +241,11 @@
             // numPrecio
             // 
             this.numPrecio.Location = new System.Drawing.Point(12, 261);
-            this.numPrecio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numPrecio.Margin = new System.Windows.Forms.Padding(4);
             this.numPrecio.Name = "numPrecio";
             this.numPrecio.Size = new System.Drawing.Size(160, 22);
             this.numPrecio.TabIndex = 10;
+            this.numPrecio.ValueChanged += new System.EventHandler(this.numPrecio_ValueChanged);
             // 
             // label6
             // 
@@ -268,7 +270,7 @@
             // txtDescripcion
             // 
             this.txtDescripcion.Location = new System.Drawing.Point(12, 127);
-            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(4);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(183, 22);
             this.txtDescripcion.TabIndex = 6;
@@ -286,7 +288,7 @@
             // txtNombre
             // 
             this.txtNombre.Location = new System.Drawing.Point(12, 65);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(4);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(132, 22);
             this.txtNombre.TabIndex = 4;
@@ -303,7 +305,7 @@
             // btnAgregar
             // 
             this.btnAgregar.Location = new System.Drawing.Point(22, 357);
-            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(160, 28);
             this.btnAgregar.TabIndex = 0;
@@ -315,11 +317,12 @@
             // 
             this.dgvGrilla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvGrilla.Location = new System.Drawing.Point(240, 15);
-            this.dgvGrilla.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvGrilla.Margin = new System.Windows.Forms.Padding(4);
             this.dgvGrilla.Name = "dgvGrilla";
             this.dgvGrilla.RowHeadersWidth = 51;
             this.dgvGrilla.Size = new System.Drawing.Size(857, 316);
             this.dgvGrilla.TabIndex = 23;
+            this.dgvGrilla.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGrilla_CellClick);
             // 
             // groupBox2
             // 
@@ -327,9 +330,9 @@
             this.groupBox2.Controls.Add(this.btnAgregarCat);
             this.groupBox2.Controls.Add(this.txtAgregarCat);
             this.groupBox2.Location = new System.Drawing.Point(240, 343);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox2.Size = new System.Drawing.Size(216, 142);
             this.groupBox2.TabIndex = 27;
             this.groupBox2.TabStop = false;
@@ -347,7 +350,7 @@
             // btnAgregarCat
             // 
             this.btnAgregarCat.Location = new System.Drawing.Point(56, 92);
-            this.btnAgregarCat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAgregarCat.Margin = new System.Windows.Forms.Padding(4);
             this.btnAgregarCat.Name = "btnAgregarCat";
             this.btnAgregarCat.Size = new System.Drawing.Size(100, 28);
             this.btnAgregarCat.TabIndex = 6;
@@ -358,7 +361,7 @@
             // txtAgregarCat
             // 
             this.txtAgregarCat.Location = new System.Drawing.Point(24, 60);
-            this.txtAgregarCat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtAgregarCat.Margin = new System.Windows.Forms.Padding(4);
             this.txtAgregarCat.Name = "txtAgregarCat";
             this.txtAgregarCat.Size = new System.Drawing.Size(161, 22);
             this.txtAgregarCat.TabIndex = 3;
@@ -372,7 +375,7 @@
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgvGrilla);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmInicio";
             this.Text = "Inicio";
             this.Load += new System.EventHandler(this.frmInicio_Load);
