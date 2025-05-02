@@ -43,6 +43,7 @@
             this.btnIniciar.TabIndex = 0;
             this.btnIniciar.Text = "Iniciar";
             this.btnIniciar.UseVisualStyleBackColor = true;
+            this.btnIniciar.Click += new System.EventHandler(this.btnIniciar_Click);
             // 
             // label1
             // 
@@ -66,6 +67,7 @@
             // 
             this.txtContraseña.Location = new System.Drawing.Point(153, 137);
             this.txtContraseña.Name = "txtContraseña";
+            this.txtContraseña.PasswordChar = '*';
             this.txtContraseña.Size = new System.Drawing.Size(144, 22);
             this.txtContraseña.TabIndex = 3;
             // 
@@ -88,6 +90,7 @@
             this.Controls.Add(this.btnIniciar);
             this.Name = "frmLogin";
             this.Text = "Inicio de Sesion";
+            this.Load += new System.EventHandler(this.frmLogin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
