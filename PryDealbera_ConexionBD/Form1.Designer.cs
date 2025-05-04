@@ -322,7 +322,7 @@
             this.dgvGrilla.RowHeadersWidth = 51;
             this.dgvGrilla.Size = new System.Drawing.Size(857, 316);
             this.dgvGrilla.TabIndex = 23;
-            this.dgvGrilla.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGrilla_CellClick);
+            this.dgvGrilla.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGrilla_CellContentClick);
             // 
             // groupBox2
             // 

@@ -57,25 +57,29 @@ namespace PryDealbera_ConexionBD
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            clsProducto modificado = new clsProducto(
-            codSel,
-            txtNombre.Text,
-            txtDescripcion.Text,
-            numPrecio.Value,
-            Convert.ToInt32(numStock.Value),
-            Convert.ToInt32(cmbCategorias.SelectedValue)
-            );
+            if (dgvGrilla.SelectedRows.Count > 0)
+            {
+                // Crear el producto utilizando el constructor con parámetros
+                clsProducto producto = new clsProducto(
+                    Convert.ToInt32(dgvGrilla.SelectedRows[0].Cells["Codigo"].Value),
+                    txtNombre.Text,
+                    txtDescripcion.Text,
+                    decimal.Parse(numPrecio.Text),
+                    int.Parse(numStock.Text),
+                    Convert.ToInt32(cmbCategorias.SelectedValue)
+                );
 
-            conexion.Modificar(modificado);
-            conexion.ListarBD(dgvGrilla);
+                // Llamar al método que recibe el objeto producto
+                clsConexionBD objConexion = new clsConexionBD();
+                objConexion.Modificar(producto);
 
-            txtNombre.Clear();
-            txtDescripcion.Clear();
-            numPrecio.Value = 0;
-            numStock.Value = 0;
-            cmbCategorias.SelectedIndex = 0;
-
-            codSel = 0;
+                // Refrescar la tabla
+                objConexion.ListarBD(dgvGrilla);
+            }
+            else
+            {
+                MessageBox.Show("Seleccioná un producto para modificar.");
+            }
         }
 
         private void btnEliminarCod_Click(object sender, EventArgs e)
@@ -176,9 +180,20 @@ namespace PryDealbera_ConexionBD
             numStock.Maximum = 500000000000;
         }
 
-        private void dgvGrilla_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvGrilla_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow fila = dgvGrilla.Rows[e.RowIndex];
+
+                txtNombre.Text = fila.Cells["Nombre"].Value.ToString();
+                txtDescripcion.Text = fila.Cells["Descripcion"].Value.ToString();
+                numPrecio.Text = fila.Cells["Precio"].Value.ToString();
+                numStock.Text = fila.Cells["Stock"].Value.ToString();
+                cmbCategorias.SelectedValue = fila.Cells["CategoriaId"].Value;
+
+            }
         }
     }
 }
