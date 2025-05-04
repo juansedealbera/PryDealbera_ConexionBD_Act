@@ -48,7 +48,7 @@ namespace PryDealbera_ConexionBD
 
         public void ListarBD(DataGridView Grilla)
         {
-            try
+            /*try
             {
                 using (SqlConnection conexion = new SqlConnection(cadenaConexion))
                 {
@@ -63,6 +63,26 @@ namespace PryDealbera_ConexionBD
                     Grilla.DataSource = tabla;
                 }
 
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("No se pudieron cargar los productos correctamente.", "Error de carga", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }*/
+            try
+            {
+                using (SqlConnection conexion = new SqlConnection(cadenaConexion))
+                {
+                    conexion.Open();
+                    // Aseguramos que el orden sea por el campo Código
+                    string query = "SELECT * FROM Productos ORDER BY Codigo ASC";
+
+                    SqlCommand comando = new SqlCommand(query, conexion);
+                    SqlDataAdapter adaptador = new SqlDataAdapter(comando);
+
+                    DataTable tabla = new DataTable();
+                    adaptador.Fill(tabla);
+                    Grilla.DataSource = tabla;
+                }
             }
             catch (Exception error)
             {

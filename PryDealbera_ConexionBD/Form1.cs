@@ -111,11 +111,6 @@ namespace PryDealbera_ConexionBD
             }
         }
 
-        private void cmbCategorias_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnAgregarCat_Click(object sender, EventArgs e)
         {
             string nuevaCategoria = txtAgregarCat.Text.Trim();
@@ -182,7 +177,6 @@ namespace PryDealbera_ConexionBD
 
         private void dgvGrilla_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow fila = dgvGrilla.Rows[e.RowIndex];
