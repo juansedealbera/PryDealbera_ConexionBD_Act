@@ -25,7 +25,7 @@ namespace PryDealbera_ConexionBD
 
         private void btnIniciar_Click(object sender, EventArgs e)
         {
-            string connectionString = "Server=localhost\\SQLEXPRESS;Database=Comercio;Trusted_Connection=True;";
+            string connectionString = "Server=PC22;Database=Comercio;Trusted_Connection=True;";
             string username = txtUsuario.Text;
             string password = txtContraseña.Text;
 
