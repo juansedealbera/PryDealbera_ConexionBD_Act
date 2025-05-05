@@ -17,7 +17,6 @@ namespace PryDealbera_ConexionBD
             InitializeComponent();
         }
 
-        //Instancias de clases//
         clsConexionBD conexion = new clsConexionBD();
 
         //Variable para guardar el codigo seleccionado//
@@ -73,7 +72,6 @@ namespace PryDealbera_ConexionBD
                 clsConexionBD objConexion = new clsConexionBD();
                 objConexion.Modificar(producto);
 
-                // Refrescar la tabla
                 objConexion.ListarBD(dgvGrilla);
             }
             else
@@ -84,13 +82,12 @@ namespace PryDealbera_ConexionBD
 
         private void btnEliminarCod_Click(object sender, EventArgs e)
         {
-            // Verifica si hay una fila seleccionada
             if (dgvGrilla.CurrentRow != null)
             {
-                // Obtenemos el valor del código desde la fila seleccionada
+                //valor del código desde la fila seleccionada
                 int codigoSeleccionado = Convert.ToInt32(dgvGrilla.CurrentRow.Cells["Codigo"].Value);
 
-                // Confirmamos la eliminación
+                //eliminación
                 DialogResult resultado = MessageBox.Show("¿Estás seguro de que deseas eliminar este producto?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (resultado == DialogResult.Yes)
@@ -98,10 +95,9 @@ namespace PryDealbera_ConexionBD
                     // Creamos una instancia de la clase de conexión
                     clsConexionBD conexion = new clsConexionBD();
 
-                    // Llamamos al método Eliminar
                     conexion.Eliminar(codigoSeleccionado);
 
-                    // Recargamos la grilla después de eliminar
+                    //recargo la grilla
                     conexion.ListarBD(dgvGrilla);
                 }
             }
@@ -121,13 +117,11 @@ namespace PryDealbera_ConexionBD
                 return;
             }
 
-            // Agregar la nueva categoría a la base de datos
             conexion.AgregarCategoria(nuevaCategoria);
 
-            // Limpiar el TextBox
             txtAgregarCat.Clear();
 
-            // Recargar las categorías en el ComboBox
+            // Recarga las categorías en el ComboBox
             conexion.categorias(cmbCategorias);
         }
 

@@ -190,20 +190,16 @@ namespace PryDealbera_ConexionBD
         {
             try
             {
-                // Conectar a la base de datos
                 using (SqlConnection conexion = new SqlConnection(cadenaConexion))
                 {
                     conexion.Open();
                     string query = "INSERT INTO Categorias (Nombre) VALUES (@nombre)";  // La consulta SQL para insertar la categoría.
 
-                    // Crear el comando SQL con el parámetro
                     SqlCommand comando = new SqlCommand(query, conexion);
                     comando.Parameters.AddWithValue("@nombre", nombreCategoria);  // Asignar el valor del parámetro.
 
-                    // Ejecutar el comando SQL
                     comando.ExecuteNonQuery();
 
-                    // Mostrar un mensaje de éxito
                     MessageBox.Show("Categoría agregada exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
@@ -221,17 +217,16 @@ namespace PryDealbera_ConexionBD
                 {
                     conexion.Open();
 
-                    // Consulta SQL que busca productos por nombre (puedes usar LIKE para coincidencias parciales)
                     string query = "SELECT * FROM Productos WHERE Nombre LIKE @nombre";
 
                     SqlCommand comando = new SqlCommand(query, conexion);
-                    comando.Parameters.AddWithValue("@nombre", "%" + nombre + "%");  // Usar LIKE para búsqueda parcial
+                    comando.Parameters.AddWithValue("@nombre", "%" + nombre + "%");
 
                     SqlDataAdapter adaptador = new SqlDataAdapter(comando);
                     DataTable tabla = new DataTable();
                     adaptador.Fill(tabla);
 
-                    // Mostrar los resultados en el DataGridView
+                    // Mostrar resultados
                     grilla.DataSource = tabla;
                 }
             }
