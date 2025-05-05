@@ -48,26 +48,6 @@ namespace PryDealbera_ConexionBD
 
         public void ListarBD(DataGridView Grilla)
         {
-            /*try
-            {
-                using (SqlConnection conexion = new SqlConnection(cadenaConexion))
-                {
-                    conexion.Open();
-                    string query = "SELECT * FROM Productos";
-
-                    SqlCommand comando = new SqlCommand(query, conexion);
-                    SqlDataAdapter adaptador = new SqlDataAdapter(comando);
-
-                    DataTable tabla = new DataTable();
-                    adaptador.Fill(tabla);
-                    Grilla.DataSource = tabla;
-                }
-
-            }
-            catch (Exception error)
-            {
-                MessageBox.Show("No se pudieron cargar los productos correctamente.", "Error de carga", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }*/
             try
             {
                 using (SqlConnection conexion = new SqlConnection(cadenaConexion))
@@ -88,7 +68,6 @@ namespace PryDealbera_ConexionBD
             {
                 MessageBox.Show("No se pudieron cargar los productos correctamente.", "Error de carga", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
 
         public void categorias(ComboBox Combo)
@@ -147,8 +126,6 @@ namespace PryDealbera_ConexionBD
             }
         }
 
-
-        //Terminar el metodo de modificar//
         public void Modificar(clsProducto producto)
         {
             try
@@ -288,6 +265,6 @@ namespace PryDealbera_ConexionBD
             }
         }
 
-
+        
     }
 }
