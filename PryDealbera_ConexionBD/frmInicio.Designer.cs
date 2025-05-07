@@ -30,17 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmInicio));
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.btnVerCategorias = new System.Windows.Forms.Button();
             this.btnVerTodos = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.btnBuscarProducto = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.txtBuscarProducto = new System.Windows.Forms.TextBox();
             this.cmbVerCategorias = new System.Windows.Forms.ComboBox();
-            this.btnEliminarCod = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cmbCategorias = new System.Windows.Forms.ComboBox();
-            this.btnModificar = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.numStock = new System.Windows.Forms.NumericUpDown();
             this.label7 = new System.Windows.Forms.Label();
@@ -51,23 +48,29 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnAgregar = new System.Windows.Forms.Button();
             this.dgvGrilla = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnAgregarCat = new System.Windows.Forms.Button();
             this.txtAgregarCat = new System.Windows.Forms.TextBox();
+            this.btnVerCategorias = new System.Windows.Forms.Button();
+            this.btnAgregarCat = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnEliminarCod = new System.Windows.Forms.Button();
+            this.btnModificar = new System.Windows.Forms.Button();
+            this.btnAgregar = new System.Windows.Forms.Button();
             this.groupBox4.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numStock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPrecio)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).BeginInit();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox4
             // 
             this.groupBox4.BackColor = System.Drawing.Color.White;
+            this.groupBox4.Controls.Add(this.pictureBox1);
             this.groupBox4.Controls.Add(this.btnVerCategorias);
             this.groupBox4.Controls.Add(this.btnVerTodos);
             this.groupBox4.Controls.Add(this.label11);
@@ -77,24 +80,14 @@
             this.groupBox4.Controls.Add(this.cmbVerCategorias);
             this.groupBox4.Location = new System.Drawing.Point(357, 279);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(397, 115);
+            this.groupBox4.Size = new System.Drawing.Size(397, 126);
             this.groupBox4.TabIndex = 26;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Filtro de Búsqueda";
             // 
-            // btnVerCategorias
-            // 
-            this.btnVerCategorias.Location = new System.Drawing.Point(23, 70);
-            this.btnVerCategorias.Name = "btnVerCategorias";
-            this.btnVerCategorias.Size = new System.Drawing.Size(106, 26);
-            this.btnVerCategorias.TabIndex = 17;
-            this.btnVerCategorias.Text = "Buscar Categoría";
-            this.btnVerCategorias.UseVisualStyleBackColor = true;
-            this.btnVerCategorias.Click += new System.EventHandler(this.btnVerCategorias_Click);
-            // 
             // btnVerTodos
             // 
-            this.btnVerTodos.Location = new System.Drawing.Point(316, 44);
+            this.btnVerTodos.Location = new System.Drawing.Point(316, 49);
             this.btnVerTodos.Name = "btnVerTodos";
             this.btnVerTodos.Size = new System.Drawing.Size(75, 25);
             this.btnVerTodos.TabIndex = 16;
@@ -105,7 +98,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(183, 30);
+            this.label11.Location = new System.Drawing.Point(181, 38);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(86, 13);
             this.label11.TabIndex = 15;
@@ -113,7 +106,7 @@
             // 
             // btnBuscarProducto
             // 
-            this.btnBuscarProducto.Location = new System.Drawing.Point(179, 70);
+            this.btnBuscarProducto.Location = new System.Drawing.Point(177, 78);
             this.btnBuscarProducto.Name = "btnBuscarProducto";
             this.btnBuscarProducto.Size = new System.Drawing.Size(96, 26);
             this.btnBuscarProducto.TabIndex = 14;
@@ -124,7 +117,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(33, 26);
+            this.label10.Location = new System.Drawing.Point(31, 34);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(90, 13);
             this.label10.TabIndex = 13;
@@ -132,7 +125,7 @@
             // 
             // txtBuscarProducto
             // 
-            this.txtBuscarProducto.Location = new System.Drawing.Point(164, 44);
+            this.txtBuscarProducto.Location = new System.Drawing.Point(162, 52);
             this.txtBuscarProducto.Name = "txtBuscarProducto";
             this.txtBuscarProducto.Size = new System.Drawing.Size(122, 20);
             this.txtBuscarProducto.TabIndex = 13;
@@ -140,20 +133,10 @@
             // cmbVerCategorias
             // 
             this.cmbVerCategorias.FormattingEnabled = true;
-            this.cmbVerCategorias.Location = new System.Drawing.Point(23, 44);
+            this.cmbVerCategorias.Location = new System.Drawing.Point(21, 52);
             this.cmbVerCategorias.Name = "cmbVerCategorias";
             this.cmbVerCategorias.Size = new System.Drawing.Size(121, 21);
             this.cmbVerCategorias.TabIndex = 13;
-            // 
-            // btnEliminarCod
-            // 
-            this.btnEliminarCod.Location = new System.Drawing.Point(16, 348);
-            this.btnEliminarCod.Name = "btnEliminarCod";
-            this.btnEliminarCod.Size = new System.Drawing.Size(120, 23);
-            this.btnEliminarCod.TabIndex = 6;
-            this.btnEliminarCod.Text = "Eliminar";
-            this.btnEliminarCod.UseVisualStyleBackColor = true;
-            this.btnEliminarCod.Click += new System.EventHandler(this.btnEliminarCod_Click);
             // 
             // groupBox1
             // 
@@ -174,7 +157,7 @@
             this.groupBox1.Controls.Add(this.btnAgregar);
             this.groupBox1.Location = new System.Drawing.Point(7, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(167, 382);
+            this.groupBox1.Size = new System.Drawing.Size(167, 418);
             this.groupBox1.TabIndex = 24;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Agregar Producto";
@@ -186,16 +169,6 @@
             this.cmbCategorias.Name = "cmbCategorias";
             this.cmbCategorias.Size = new System.Drawing.Size(121, 21);
             this.cmbCategorias.TabIndex = 18;
-            // 
-            // btnModificar
-            // 
-            this.btnModificar.Location = new System.Drawing.Point(16, 319);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(120, 22);
-            this.btnModificar.TabIndex = 17;
-            this.btnModificar.Text = "Modificar";
-            this.btnModificar.UseVisualStyleBackColor = true;
-            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // label8
             // 
@@ -280,16 +253,6 @@
             this.label1.Size = new System.Drawing.Size(0, 13);
             this.label1.TabIndex = 3;
             // 
-            // btnAgregar
-            // 
-            this.btnAgregar.Location = new System.Drawing.Point(16, 290);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(120, 23);
-            this.btnAgregar.TabIndex = 0;
-            this.btnAgregar.Text = "Agregar";
-            this.btnAgregar.UseVisualStyleBackColor = true;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
-            // 
             // dgvGrilla
             // 
             this.dgvGrilla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -308,7 +271,7 @@
             this.groupBox2.Controls.Add(this.txtAgregarCat);
             this.groupBox2.Location = new System.Drawing.Point(180, 279);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(162, 115);
+            this.groupBox2.Size = new System.Drawing.Size(162, 126);
             this.groupBox2.TabIndex = 27;
             this.groupBox2.TabStop = false;
             // 
@@ -321,16 +284,6 @@
             this.label2.TabIndex = 9;
             this.label2.Text = "Agregar Categorías:";
             // 
-            // btnAgregarCat
-            // 
-            this.btnAgregarCat.Location = new System.Drawing.Point(42, 75);
-            this.btnAgregarCat.Name = "btnAgregarCat";
-            this.btnAgregarCat.Size = new System.Drawing.Size(75, 23);
-            this.btnAgregarCat.TabIndex = 6;
-            this.btnAgregarCat.Text = "Agregar";
-            this.btnAgregarCat.UseVisualStyleBackColor = true;
-            this.btnAgregarCat.Click += new System.EventHandler(this.btnAgregarCat_Click);
-            // 
             // txtAgregarCat
             // 
             this.txtAgregarCat.Location = new System.Drawing.Point(18, 49);
@@ -338,12 +291,79 @@
             this.txtAgregarCat.Size = new System.Drawing.Size(122, 20);
             this.txtAgregarCat.TabIndex = 3;
             // 
+            // btnVerCategorias
+            // 
+            this.btnVerCategorias.Location = new System.Drawing.Point(21, 79);
+            this.btnVerCategorias.Name = "btnVerCategorias";
+            this.btnVerCategorias.Size = new System.Drawing.Size(108, 25);
+            this.btnVerCategorias.TabIndex = 17;
+            this.btnVerCategorias.Text = "Buscar Categoría";
+            this.btnVerCategorias.UseVisualStyleBackColor = true;
+            this.btnVerCategorias.Click += new System.EventHandler(this.btnVerCategorias_Click);
+            // 
+            // btnAgregarCat
+            // 
+            this.btnAgregarCat.Image = global::PryDealbera_ConexionBD.Properties.Resources._1486485588_add_create_new_math_sign_cross_plus_81186;
+            this.btnAgregarCat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAgregarCat.Location = new System.Drawing.Point(20, 78);
+            this.btnAgregarCat.Name = "btnAgregarCat";
+            this.btnAgregarCat.Size = new System.Drawing.Size(120, 41);
+            this.btnAgregarCat.TabIndex = 6;
+            this.btnAgregarCat.Text = "Agregar";
+            this.btnAgregarCat.UseVisualStyleBackColor = true;
+            this.btnAgregarCat.Click += new System.EventHandler(this.btnAgregarCat_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::PryDealbera_ConexionBD.Properties.Resources.xmag_search_find_export_locate_5984;
+            this.pictureBox1.Location = new System.Drawing.Point(354, 4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(37, 39);
+            this.pictureBox1.TabIndex = 18;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btnEliminarCod
+            // 
+            this.btnEliminarCod.Image = global::PryDealbera_ConexionBD.Properties.Resources.vcsconflicting_93497;
+            this.btnEliminarCod.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEliminarCod.Location = new System.Drawing.Point(16, 378);
+            this.btnEliminarCod.Name = "btnEliminarCod";
+            this.btnEliminarCod.Size = new System.Drawing.Size(120, 34);
+            this.btnEliminarCod.TabIndex = 6;
+            this.btnEliminarCod.Text = "Eliminar";
+            this.btnEliminarCod.UseVisualStyleBackColor = true;
+            this.btnEliminarCod.Click += new System.EventHandler(this.btnEliminarCod_Click);
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.Image = ((System.Drawing.Image)(resources.GetObject("btnModificar.Image")));
+            this.btnModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnModificar.Location = new System.Drawing.Point(16, 331);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(120, 39);
+            this.btnModificar.TabIndex = 17;
+            this.btnModificar.Text = "Modificar";
+            this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar.Image")));
+            this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAgregar.Location = new System.Drawing.Point(16, 286);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(120, 39);
+            this.btnAgregar.TabIndex = 0;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            // 
             // frmInicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(835, 405);
+            this.ClientSize = new System.Drawing.Size(835, 442);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox1);
@@ -361,6 +381,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -395,6 +416,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnAgregarCat;
         private System.Windows.Forms.TextBox txtAgregarCat;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

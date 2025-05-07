@@ -29,23 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
-            this.btnIniciar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtContraseña = new System.Windows.Forms.TextBox();
             this.txtUsuario = new System.Windows.Forms.TextBox();
+            this.btnIniciar = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // btnIniciar
-            // 
-            this.btnIniciar.Location = new System.Drawing.Point(115, 167);
-            this.btnIniciar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnIniciar.Name = "btnIniciar";
-            this.btnIniciar.Size = new System.Drawing.Size(86, 36);
-            this.btnIniciar.TabIndex = 0;
-            this.btnIniciar.Text = "Iniciar";
-            this.btnIniciar.UseVisualStyleBackColor = true;
-            this.btnIniciar.Click += new System.EventHandler(this.btnIniciar_Click);
             // 
             // label1
             // 
@@ -70,7 +59,7 @@
             // txtContraseña
             // 
             this.txtContraseña.Location = new System.Drawing.Point(115, 111);
-            this.txtContraseña.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtContraseña.Margin = new System.Windows.Forms.Padding(2);
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.PasswordChar = '*';
             this.txtContraseña.Size = new System.Drawing.Size(109, 20);
@@ -79,10 +68,23 @@
             // txtUsuario
             // 
             this.txtUsuario.Location = new System.Drawing.Point(115, 54);
-            this.txtUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(109, 20);
             this.txtUsuario.TabIndex = 4;
+            // 
+            // btnIniciar
+            // 
+            this.btnIniciar.Image = global::PryDealbera_ConexionBD.Properties.Resources.enter_icon_icons_com_71207;
+            this.btnIniciar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnIniciar.Location = new System.Drawing.Point(115, 161);
+            this.btnIniciar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnIniciar.Name = "btnIniciar";
+            this.btnIniciar.Size = new System.Drawing.Size(109, 40);
+            this.btnIniciar.TabIndex = 0;
+            this.btnIniciar.Text = "Iniciar";
+            this.btnIniciar.UseVisualStyleBackColor = true;
+            this.btnIniciar.Click += new System.EventHandler(this.btnIniciar_Click);
             // 
             // frmLogin
             // 
@@ -96,7 +98,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnIniciar);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmLogin";
             this.Text = "Inicio de Sesion";
             this.Load += new System.EventHandler(this.frmLogin_Load);
