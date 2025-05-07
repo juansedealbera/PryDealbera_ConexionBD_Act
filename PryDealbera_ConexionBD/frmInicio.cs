@@ -58,7 +58,6 @@ namespace PryDealbera_ConexionBD
         {
             if (dgvGrilla.SelectedRows.Count > 0)
             {
-                // Crear el producto utilizando el constructor con parámetros
                 clsProducto producto = new clsProducto(
                     Convert.ToInt32(dgvGrilla.SelectedRows[0].Cells["Codigo"].Value),
                     txtNombre.Text,
@@ -68,7 +67,6 @@ namespace PryDealbera_ConexionBD
                     Convert.ToInt32(cmbCategorias.SelectedValue)
                 );
 
-                // Llamar al método que recibe el objeto producto
                 clsConexionBD objConexion = new clsConexionBD();
                 objConexion.Modificar(producto);
 
@@ -87,17 +85,14 @@ namespace PryDealbera_ConexionBD
                 //valor del código desde la fila seleccionada
                 int codigoSeleccionado = Convert.ToInt32(dgvGrilla.CurrentRow.Cells["Codigo"].Value);
 
-                //eliminación
                 DialogResult resultado = MessageBox.Show("¿Estás seguro de que deseas eliminar este producto?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (resultado == DialogResult.Yes)
                 {
-                    // Creamos una instancia de la clase de conexión
                     clsConexionBD conexion = new clsConexionBD();
 
                     conexion.Eliminar(codigoSeleccionado);
 
-                    //recargo la grilla
                     conexion.ListarBD(dgvGrilla);
                 }
             }
@@ -121,7 +116,6 @@ namespace PryDealbera_ConexionBD
 
             txtAgregarCat.Clear();
 
-            // Recarga las categorías en el ComboBox
             conexion.categorias(cmbCategorias);
         }
 
@@ -135,7 +129,6 @@ namespace PryDealbera_ConexionBD
                 return;
             }
 
-            // Llamar al método de búsqueda en la base de datos.
             conexion.BuscarPorNombre(nombreBuscado, dgvGrilla);
 
             txtBuscarProducto.Text = " ";

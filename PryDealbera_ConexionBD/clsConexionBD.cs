@@ -16,7 +16,6 @@ namespace PryDealbera_ConexionBD
         //cadena de conexion
         string cadenaConexion = "Server=PC22;Database=Comercio;Trusted_Connection=True;";
         //"Server=localhost\\SQLEXPRESS;Database=Comercio;Trusted_Connection=True;"
-        //"Server=PC26;Database=Comercio;Trusted_Connection=True;"
 
         //conector
         SqlConnection coneccionBaseDatos;
@@ -53,7 +52,6 @@ namespace PryDealbera_ConexionBD
                 using (SqlConnection conexion = new SqlConnection(cadenaConexion))
                 {
                     conexion.Open();
-                    // Aseguramos que el orden sea por el campo Código
                     string query = "SELECT * FROM Productos ORDER BY Codigo ASC";
 
                     SqlCommand comando = new SqlCommand(query, conexion);
