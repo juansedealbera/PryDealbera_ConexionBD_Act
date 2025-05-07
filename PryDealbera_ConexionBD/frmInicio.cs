@@ -183,5 +183,14 @@ namespace PryDealbera_ConexionBD
 
             }
         }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            DialogResult res = MessageBox.Show("Deseas Salir?", "Confirma");
+            if (res == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
     }
 }

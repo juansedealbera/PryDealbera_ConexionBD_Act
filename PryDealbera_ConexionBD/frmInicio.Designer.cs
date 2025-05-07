@@ -53,6 +53,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtAgregarCat = new System.Windows.Forms.TextBox();
             this.btnVerCategorias = new System.Windows.Forms.Button();
+            this.btnSalir = new System.Windows.Forms.Button();
             this.btnAgregarCat = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnEliminarCod = new System.Windows.Forms.Button();
@@ -78,7 +79,7 @@
             this.groupBox4.Controls.Add(this.label10);
             this.groupBox4.Controls.Add(this.txtBuscarProducto);
             this.groupBox4.Controls.Add(this.cmbVerCategorias);
-            this.groupBox4.Location = new System.Drawing.Point(357, 279);
+            this.groupBox4.Location = new System.Drawing.Point(357, 314);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(377, 126);
             this.groupBox4.TabIndex = 26;
@@ -256,10 +257,10 @@
             // dgvGrilla
             // 
             this.dgvGrilla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvGrilla.Location = new System.Drawing.Point(180, 12);
+            this.dgvGrilla.Location = new System.Drawing.Point(180, 49);
             this.dgvGrilla.Name = "dgvGrilla";
             this.dgvGrilla.RowHeadersWidth = 51;
-            this.dgvGrilla.Size = new System.Drawing.Size(643, 257);
+            this.dgvGrilla.Size = new System.Drawing.Size(643, 251);
             this.dgvGrilla.TabIndex = 23;
             this.dgvGrilla.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGrilla_CellContentClick);
             // 
@@ -269,7 +270,7 @@
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.btnAgregarCat);
             this.groupBox2.Controls.Add(this.txtAgregarCat);
-            this.groupBox2.Location = new System.Drawing.Point(180, 279);
+            this.groupBox2.Location = new System.Drawing.Point(180, 314);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(162, 126);
             this.groupBox2.TabIndex = 27;
@@ -300,6 +301,16 @@
             this.btnVerCategorias.Text = "Buscar Categoría";
             this.btnVerCategorias.UseVisualStyleBackColor = true;
             this.btnVerCategorias.Click += new System.EventHandler(this.btnVerCategorias_Click);
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.Image = global::PryDealbera_ConexionBD.Properties.Resources._4115235_exit_logout_sign_out_114030;
+            this.btnSalir.Location = new System.Drawing.Point(783, 1);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(40, 42);
+            this.btnSalir.TabIndex = 28;
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // btnAgregarCat
             // 
@@ -365,6 +376,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(835, 442);
+            this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox1);
@@ -418,6 +430,7 @@
         private System.Windows.Forms.Button btnAgregarCat;
         private System.Windows.Forms.TextBox txtAgregarCat;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnSalir;
     }
 }
 

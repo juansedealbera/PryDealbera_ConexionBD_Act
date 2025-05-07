@@ -103,5 +103,8 @@
   <ItemGroup>
     <None Include="Resources\1486485588-add-create-new-math-sign-cross-plus_81186.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4115235-exit-logout-sign-out_114030.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
