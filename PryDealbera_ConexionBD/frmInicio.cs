@@ -179,10 +179,11 @@ namespace PryDealbera_ConexionBD
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            DialogResult res = MessageBox.Show("Deseas Salir?", "Confirma");
+            DialogResult res = MessageBox.Show("¿Deseas Salir?", "Confirma", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
             if (res == DialogResult.Yes)
             {
-                Application.Exit();
+                Application.Exit();  // Esto cerrará la aplicación
             }
         }
     }

@@ -383,6 +383,7 @@
             this.Controls.Add(this.dgvGrilla);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmInicio";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inicio - Gestión de Inventario";
             this.Load += new System.EventHandler(this.frmInicio_Load);
             this.groupBox4.ResumeLayout(false);
