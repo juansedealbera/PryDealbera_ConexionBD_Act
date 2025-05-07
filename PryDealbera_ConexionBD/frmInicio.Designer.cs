@@ -80,14 +80,14 @@
             this.groupBox4.Controls.Add(this.cmbVerCategorias);
             this.groupBox4.Location = new System.Drawing.Point(357, 279);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(397, 126);
+            this.groupBox4.Size = new System.Drawing.Size(377, 126);
             this.groupBox4.TabIndex = 26;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Filtro de Búsqueda";
             // 
             // btnVerTodos
             // 
-            this.btnVerTodos.Location = new System.Drawing.Point(316, 49);
+            this.btnVerTodos.Location = new System.Drawing.Point(296, 78);
             this.btnVerTodos.Name = "btnVerTodos";
             this.btnVerTodos.Size = new System.Drawing.Size(75, 25);
             this.btnVerTodos.TabIndex = 16;
@@ -315,10 +315,11 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox1.Image = global::PryDealbera_ConexionBD.Properties.Resources.xmag_search_find_export_locate_5984;
-            this.pictureBox1.Location = new System.Drawing.Point(354, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(320, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(37, 39);
+            this.pictureBox1.Size = new System.Drawing.Size(40, 39);
             this.pictureBox1.TabIndex = 18;
             this.pictureBox1.TabStop = false;
             // 
